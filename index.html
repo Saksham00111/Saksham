@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #Abs {
+            background: rgba(0, 0, 0, 0.5) url('Calculator.jpg') center/cover no-repeat fixed;
+            height: 100vh;
+            position: relative;
+        }
+        #unique {
+            width: 35%;
+            height: 300px;
+            background-color: aqua;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid black; /* Adds a border */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adds shadow for depth */
+            padding: 20px; /* Adds some space inside the div */
+        }
+    </style>
+    
+</head>
+<body> 
+  <div id="Abs">
+    <div id="unique">
+        
+        <h1>Result - <span id="res"></span></h1><br><br>
+        <label for="Enter Number 1">Enter Number 1:</label>
+        <input type="tel" placeholder="Enter a digit" id="num1" style=" width:300px; height: 25px;"><br><br><br>
+        <label for="Enter Number 2">Enter Number 2:</label>
+        <input type="tel" placeholder="Enter a digit" id="num2" style="width: 300px; height: 25px;"><br><br><br><br>
+        <button id="addButton"  style="padding: 5px; margin-right: 5px; background-color:red; border: 1px solid black;">Add Numbers</button>
+        <button id="subButton"  style="padding: 5px; margin-right: 5px; background-color:skyblue;border: 1px solid black;">Sub Numbers</button>
+        <button id="mulButton"  style="padding: 5px; margin-right: 5px;background-color:green;border: 1px solid black;">Mul Numbers</button>
+        <button id="divButton"  style="padding: 5px; margin-right: 5px;background-color:yellow;border:1px solid black;">Div Numbers</button>
+      <script>
+        
+        var addButton = document.getElementById("addButton");
+        var subButton = document.getElementById("subButton");
+        var mulButton = document.getElementById("mulButton");
+        var divButton = document.getElementById("divButton");
+        
+        
+
+        addButton.onclick = function () {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var res = document.getElementById("res");
+            var out = (num1 + num2).toFixed(2);
+            res.innerHTML = out;
+        };
+
+        subButton.onclick = function () {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var res = document.getElementById("res");
+            var out = (num1 - num2).toFixed(2);
+            res.innerHTML = out;
+        };
+
+        mulButton.onclick = function () {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var res = document.getElementById("res");
+            var out = (num1 * num2).toFixed(2);
+            res.innerHTML = out;
+        };
+
+        divButton.onclick = function () {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var res = document.getElementById("res");
+            var out = (num1 / num2).toFixed(2);
+            res.innerHTML = out;
+        };
+      </script>  
+    </div>
+</div>  
+</body>
+</html>
